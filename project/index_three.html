@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-200">
+    
+    <div class="bg-gray-100 p-8 rounded-lg shadow-lg w-96 text-center">
+        <h2 class="text-xl font-semibold text-gray-800">OTP Verification</h2>
+        <p class="text-gray-600 mt-2 italic">
+            Please enter the one-time verification code sent to your phone. <br>
+            The code expires in <span id="timer" class="text-red-500 font-bold">45</span> seconds.
+        </p>
+
+        <input type="text" placeholder="Enter the OTP" 
+            class="mt-4 w-full p-3 border rounded-lg text-center text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            maxlength="6">
+        
+        <button id="verifyBtn" class="mt-4 w-full bg-blue-500 text-white py-2 rounded-lg font-semibold hover:bg-blue-600 transition">
+            Verify OTP
+        </button>
+
+        <p class="mt-3 text-gray-500 text-sm">
+            Didn't receive the code? 
+            <button id="resendBtn" class="text-blue-500 font-semibold hover:underline">Resend</button>
+        </p>
+    </div>
+
+    <script>
+        let timer = 45;
+        const timerElement = document.getElementById("timer");
+        const resendBtn = document.getElementById("resendBtn");
+
+        const countdown = setInterval(() => {
+            if (timer > 0) {
+                timer--;
+                timerElement.textContent = timer;
+            } else {
+                clearInterval(countdown);
+                resendBtn.classList.remove("text-gray-400");
+                resendBtn.classList.add("text-blue-500", "hover:underline");
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>

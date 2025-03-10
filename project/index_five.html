@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice Board</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Styles for unique design */
+        .card:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card img {
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover img {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+    <!-- Notice Card -->
+    <div class="card w-96 bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 ease-in-out">
+        <!-- Notice Image -->
+        <div class="relative">
+            <img src="bg1.jpg" alt="Notice Board" class="w-full h-48 object-cover rounded-t-lg">
+        </div>
+
+        <!-- Notice Content -->
+        <div class="p-6">
+            <a href="#" class="text-blue-500 hover:text-blue-700 text-sm font-medium">Back to Homepage</a>
+            <h2 class="text-2xl font-semibold text-gray-800 mt-4">Important Notice</h2>
+            <p class="text-gray-600 mt-2 text-lg">The results for the exams will be published on the <strong>1st of April</strong>.</p>
+            <p class="text-gray-600 mt-2">Please make sure to check the academic notice board regularly for updates.</p>
+
+            <!-- Link to further details -->
+            <a href="#" class="text-indigo-500 hover:text-indigo-700 mt-4 block">Learn more about the exam schedule</a>
+
+            <!-- Download Link for PDF -->
+            <a href="path/to/your-notice.pdf" class="mt-4 block text-green-500 hover:text-green-700" download="Notice.pdf">Download Notice as PDF</a>
+        </div>
+    </div>
+
+</body>
+</html>
